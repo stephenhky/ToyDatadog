@@ -1,4 +1,3 @@
-
 from datadog import initialize
 
 
@@ -23,13 +22,10 @@ options = {
 initialize(**options)
 
 
-from datadog import statsd
-
-statsd.histogram('kwyho.smile', 20, tags=["class0:1"])
-statsd.histogram('kwyho.smile', 20, tags=["class1:1"])
-
-
 from datadog import ThreadStats
 stats = ThreadStats()
 stats.start()
 stats.increment('kwyho.laugh')
+stats.increment('kwyho.smile', 1, tags=["class:0"])
+stats.increment('kwyho.smile', 1, tags=["class:1"])
+stats.increment('kwyho.smile', 1, tags=["class:2"])
