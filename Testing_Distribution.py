@@ -12,7 +12,7 @@ def read_properties(file):
     return properties
 
 
-dd_props = read_properties(open('personaldatadog.ini', 'r'))
+dd_props = read_properties(open('datadog.ini', 'r'))
 
 
 options = {
